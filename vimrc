@@ -23,6 +23,8 @@ endif
 
 let mapleader = "-"
 
+set encoding=utf-8
+
 " Searching and moving " {{{
 " Insert a \v before any string search to turn off Vim's default regex
 nnoremap / /\v
@@ -49,21 +51,25 @@ vnoremap <tab> %
 " always how what mode we're currently editing in
 set showmode
 
-" Set standard setting for PEAR coding standards {{{
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-" Auto expand tabs to spaces
-set expandtab
-" }}}
-
-set autoindent
-set smartindent
-" Prevent smart indent from moving lines starting with # to column 1
-inoremap # X#
-
 " Linewidth to endless
 set textwidth=0
+
+" PEP8
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set textwidth=120 |
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+" Prevent smart indent from moving lines starting with # to column 1
+inoremap # X# 
 
 " Do not wrap lines automatically
 set nowrap
@@ -116,11 +122,6 @@ au BufRead,BufNewFile *bash,*ksh,*sh set noexpandtab
 " Keep tab characters when working with makefiles
 au BufRead,BufNewFile Makefile* set noexpandtab
 
-" Wrap text after a certain number of characters
-" Python: 120
-" C: 120
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h set textwidth=120
-
 " Turn off settings in 'formatoptions' relating to comment formatting.
 " - c : do not automatically insert the comment leader when wrapping based
 " on
@@ -131,13 +132,6 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h set textwidth=120
 " Python: not needed
 " C: prevents insertion of '*' at the beginning of every line in a comment
 au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoptions-=r
-
-" Use UNIX (\n) line endings.
-" Only used for new files so as to not force existing files to change their
-" line endings.
-"  Python: yes
-"  C: yes
-au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
 " Keyboard mappings
 
@@ -175,5 +169,15 @@ nnoremap <C-L> <C-W><C-L> "Ctrl-k to move up a split
 nnoremap <C-L> <C-W><C-L> "Ctrl-l to move right a split
 nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split
 
-" quick toggle for NERDTree plugin
+" Plugins "
+
+" NerdTree
+" quick toggle
 map <C-n> :NERDTreeToggle<CR>
+" ignore .pyc files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" YouCompleteMe
+" make the autocomplete window go away when done
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
