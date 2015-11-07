@@ -176,3 +176,21 @@ nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split
 map <C-n> :NERDTreeToggle<CR>
 " ignore .pyc files in NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" Jedi-Vim
+" Add the virtualenv's site-packages to vim path
+" 110715 - I can't get this working and the current version of
+" Python(3.4.2) doesn't create an activate_this.py program in the bin
+" anyway.
+"if has('python')
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"    project_base_dir = os.environ['VIRTUAL_ENV']
+"    sys.path.insert(0, project_base_dir)
+"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"    with open(activate_this) as f:
+"      exec(f.read(), dict(__file__=activate_this))
+"EOF
+"endif
