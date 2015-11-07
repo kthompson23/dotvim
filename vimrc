@@ -176,8 +176,3 @@ nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split
 map <C-n> :NERDTreeToggle<CR>
 " ignore .pyc files in NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
-
-" YouCompleteMe
-" make the autocomplete window go away when done
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
