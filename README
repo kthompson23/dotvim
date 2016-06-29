@@ -1,0 +1,11 @@
+Installation:
+
+	git clone https://github.com/kthompson23/dotvim.git ~/.vim
+
+Create symlinks:
+	
+	ln -s ~/.vim/vimrc ~/.vimrc
+
+Reference:
+
+	http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/

@@ -178,6 +178,10 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Jedi-Vim
+" Do not select the first available when I hit .
+    let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+
 " Add the virtualenv's site-packages to vim path
 " 110715 - I can't get this working and the current version of
 " Python(3.4.2) doesn't create an activate_this.py program in the bin
