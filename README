@@ -1,10 +1,19 @@
 Installation:
 
 	git clone https://github.com/kthompson23/dotvim.git ~/.vim
+	git submodule init
+	git submodule update
 
 Create symlinks:
 	
 	ln -s ~/.vim/vimrc ~/.vimrc
+
+Adding submodule
+	cd ~/.vim
+	git submodule add http://github.com/user_name/repo_name.git bundle/repo_name
+
+Upgrading all bundled plugins
+	git submodule foreach git pull origin master
 
 Reference:
 
