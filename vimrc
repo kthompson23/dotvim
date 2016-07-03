@@ -64,10 +64,27 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set textwidth=120 |
 
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.html
     \ set tabstop=2 |
+    \ set expandtab |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+    \ set fileformat=unix |
+
+au BufNewFile,BufRead *.js
+    \ set tabstop=2 |
+    \ set expandtab |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set fileformat=unix |
+
+au BufNewFile,BufRead *.css
+    \ set tabstop=2 |
+    \ set expandtab |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set fileformat=unix |
+
 " Prevent smart indent from moving lines starting with # to column 1
 inoremap # X# 
 
@@ -181,20 +198,3 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " Do not select the first available when I hit .
     let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
-
-" Add the virtualenv's site-packages to vim path
-" 110715 - I can't get this working and the current version of
-" Python(3.4.2) doesn't create an activate_this.py program in the bin
-" anyway.
-"if has('python')
-"py << EOF
-"import os
-"import sys
-"if 'VIRTUAL_ENV' in os.environ:
-"    project_base_dir = os.environ['VIRTUAL_ENV']
-"    sys.path.insert(0, project_base_dir)
-"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-"    with open(activate_this) as f:
-"      exec(f.read(), dict(__file__=activate_this))
-"EOF
-"endif
