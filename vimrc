@@ -64,14 +64,14 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set textwidth=120 |
 
-au BufNewFile,BufRead *.html
+au BufNewFile,BufRead *.html,*.xml
     \ set tabstop=2 |
     \ set expandtab |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set fileformat=unix |
 
-au BufNewFile,BufRead *.js
+au BufNewFile,BufRead *.js,*.json
     \ set tabstop=2 |
     \ set expandtab |
     \ set softtabstop=2 |
@@ -86,7 +86,7 @@ au BufNewFile,BufRead *.css
     \ set fileformat=unix |
 
 " Prevent smart indent from moving lines starting with # to column 1
-inoremap # X# 
+inoremap # X#
 
 " Do not wrap lines automatically
 set nowrap
@@ -159,8 +159,6 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " remap the esc key
 inoremap jk <esc>
 "
-" Shortcut for EraseBadWhitespace
-noremap <leader>e :EraseBadWhitespace <CR>
 " toggle paste mode (when pasting from an external clipboard)
 nnoremap <F2> :set invpaste paste?<CR>
 " %% expand path of the active buffer
@@ -198,3 +196,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " Do not select the first available when I hit .
     let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
+
+" EraseBadWhitespace
+noremap <leader>e :EraseBadWhitespace <CR>
