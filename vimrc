@@ -194,8 +194,20 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Jedi-Vim
 " Do not select the first available when I hit .
-    let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
+let g:jedi#force_py_version = 3
+
+" Supertab
+" let g:SuperTabDefaultCompletionType = "<c-n>"
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-N>"
+   endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
 
 " EraseBadWhitespace
 noremap <leader>e :EraseBadWhitespace <CR>
