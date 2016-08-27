@@ -192,5 +192,12 @@ map <C-n> :NERDTreeToggle<CR>
 " ignore .pyc files in NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
+" YouCompleteMe
+" Use the default python3 executable. Setting this to just 'python'
+" Will make YouCompleteMe use the first python executable it finds meaning
+" that in a virtual environment it will probably be python3 but python2
+" everywhere else. Maybe this is what I want?
+let g:ycm_python_binary_path = '/usr/bin/python3'
+
 " EraseBadWhitespace
 noremap <leader>e :EraseBadWhitespace <CR>
