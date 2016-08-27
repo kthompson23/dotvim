@@ -4,12 +4,12 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/jedi-vim"]
-	path = bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
 [submodule "bad-whitespace"]
 	path = bundle/bad-whitespace
 	url = https://github.com/bitc/vim-bad-whitespace
+[submodule "bundle/YouCommpleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
