@@ -10,6 +10,3 @@
 [submodule "bad-whitespace"]
 	path = bundle/bad-whitespace
 	url = https://github.com/bitc/vim-bad-whitespace
-[submodule "bundle/YouCommpleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
