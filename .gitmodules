@@ -10,3 +10,6 @@
 [submodule "bad-whitespace"]
 	path = bundle/bad-whitespace
 	url = https://github.com/bitc/vim-bad-whitespace
+[submodule "bundle/editorconfig-vim"]
+	path = bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
